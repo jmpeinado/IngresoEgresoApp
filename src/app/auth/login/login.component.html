@@ -20,7 +20,7 @@
 
                     <div class="input-group-append">
                       <span class="input-group-text">
-                        <i class="fa fa-check-circle"></i>
+                        <i *ngIf="loginForm.get('email').valid" class="fa fa-check-circle"></i>
                       </span>
                     </div>
                   </div>
@@ -36,7 +36,7 @@
 
                     <div class="input-group-append">
                       <span class="input-group-text">
-                        <i class="fa fa-check-circle"></i>
+                        <i *ngIf="loginForm.get('password').valid" class="fa fa-check-circle"></i>
                       </span>
                     </div>
                   </div>
@@ -45,8 +45,17 @@
                   
                   <button type="submit"
                           [disabled]="loginForm.invalid"
+                          *ngIf="!cargando"
                           class="btn btn-primary submit-btn btn-block">
                     Login
+                  </button>
+
+                  <button type="button"
+                          [disabled]="true"
+                          *ngIf="cargando"
+                          class="btn btn-primary submit-btn btn-block">
+                    <i class="fa fa-spin fa-sync"></i>
+                    Espere ...
                   </button>
 
                 </div>
