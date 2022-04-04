@@ -30,6 +30,11 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
+import localeEs from "@angular/common/locales/es";
+import { registerLocaleData } from "@angular/common";
+import { OrdenIngresosPipe } from './pipes/orden-ingresos.pipe';
+registerLocaleData(localeEs);
+
 
 @NgModule({
   declarations: [
@@ -42,7 +47,8 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
     DetalleComponent,
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    OrdenIngresosPipe
   ],
   imports: [
     BrowserModule,
