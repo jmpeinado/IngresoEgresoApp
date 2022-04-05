@@ -16,44 +16,27 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 // Modulos
 import { AppRoutingModule } from './app-routing.module';
 
-import { ReactiveFormsModule } from '@angular/forms';
-
-
 import { AppComponent } from './app.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { IngresoEgresoComponent } from './ingreso-egreso/ingreso-egreso.component';
-import { EstadisticaComponent } from './ingreso-egreso/estadistica/estadistica.component';
-import { DetalleComponent } from './ingreso-egreso/detalle/detalle.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
+// Locale
 import localeEs from "@angular/common/locales/es";
 import { registerLocaleData } from "@angular/common";
-import { OrdenIngresosPipe } from './pipes/orden-ingresos.pipe';
 registerLocaleData(localeEs);
+
+//Auth Module
+import { AuthModule } from './auth/auth.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent,
-    RegisterComponent,
-    DashboardComponent,
-    IngresoEgresoComponent,
-    EstadisticaComponent,
-    DetalleComponent,
-    FooterComponent,
-    NavbarComponent,
-    SidebarComponent,
-    OrdenIngresosPipe
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
+    
+    AuthModule,
+
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
